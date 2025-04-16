@@ -4,18 +4,20 @@
  * @return {number}
  */
 function calculateRentalCost(days) {
-  const rentCost = days * 40;
-  const longTerm = 7;
-  const longTermOff = 50;
-  const middleTerm = 3;
-  const middleTermOff = 20;
+  const PRICE_PER_DAY = 40;
+  const LONG_TERM = 7;
+  const LONG_TERM_OFF = 50;
+  const SMALL_TERM = 3;
+  const SMALL_TERM_OFF = 20;
 
-  if (days >= longTerm) {
-    return rentCost - longTermOff;
+  const rentCost = days * PRICE_PER_DAY;
+
+  if (days >= LONG_TERM) {
+    return rentCost - LONG_TERM_OFF;
   }
 
-  if (days >= middleTerm) {
-    return rentCost - middleTermOff;
+  if (days >= SMALL_TERM) {
+    return rentCost - SMALL_TERM_OFF;
   }
 
   return rentCost;
